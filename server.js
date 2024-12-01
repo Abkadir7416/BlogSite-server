@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const writerRoutes = require('./routes/writerRoutes')
+const authRoutes = require("./routes/authRoutes");
 const Blog = require('./model/Blog')
 const dotenv = require('dotenv')
 const app = express();
@@ -47,7 +48,7 @@ app.get('/blogs', async(req, res)=> {
 
 
 // Routes
-// app.use("/api/auth", authRoutes);
+app.use("/api/auth", authRoutes);
 // app.use('/api/blogs', blogRoutes);
 app.use('/api/writer', writerRoutes);
 
