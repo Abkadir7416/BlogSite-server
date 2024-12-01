@@ -29,12 +29,6 @@ app.get('/home', (req, res)=> {
   res.send('Welcome to BlogSite Home page')
 })
 
-// Routes
-// app.use("/api/auth", authRoutes);
-// app.use('/api/blogs', blogRoutes);
-app.use('/api/writer', writerRoutes);
-
-
 
 app.get('/blogs', async(req, res)=> {
   try {
@@ -49,8 +43,15 @@ app.get('/blogs', async(req, res)=> {
       error: error
     })
   }
-  res.send('Welcome to BlogSite All Blog Page')
 })
+
+
+// Routes
+// app.use("/api/auth", authRoutes);
+// app.use('/api/blogs', blogRoutes);
+app.use('/api/writer', writerRoutes);
+
+
 
 
 
