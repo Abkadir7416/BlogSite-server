@@ -258,7 +258,6 @@ router.post("/comments/:postId", async (req, res) => {
     blog.comments.push(newComment._id);
     blog.commentCount++;
     await blog.save();
-
     res.status(200).json(newComment);
   } catch (err) {
     console.error(err.message);
