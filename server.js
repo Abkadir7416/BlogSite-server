@@ -49,7 +49,7 @@ app.get('/blogs', async(req, res)=> {
 
 // Routes
 app.use("/api/auth", authRoutes);
-// app.use('/api/blogs', blogRoutes);
+app.use('/api/blogs', blogRoutes);
 app.use('/api/writer', writerRoutes);
 
 
