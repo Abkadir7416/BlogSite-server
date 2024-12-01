@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const writerRoutes = require('./routes/writerRoutes')
+const Blog = require('./model/Blog')
 const dotenv = require('dotenv')
 const app = express();
 
@@ -30,26 +31,26 @@ app.get('/home', (req, res)=> {
 
 // Routes
 // app.use("/api/auth", authRoutes);
-app.use('/api/blogs', blogRoutes);
+// app.use('/api/blogs', blogRoutes);
 app.use('/api/writer', writerRoutes);
 
 
 
-// app.get('/blogs', async(req, res)=> {
-//   try {
-//     const blogs = await Blog.find();
-//     res.json({
-//       success:'true',
-//       data: blogs
-//     })
-//   } catch (error) {
-//     res.send({
-//       success: 'false',
-//       error: error
-//     })
-//   }
-//   res.send('Welcome to BlogSite Home page')
-// })
+app.get('/blogs', async(req, res)=> {
+  try {
+    const blogs = await Blog.find();
+    res.json({
+      success:'true',
+      data: blogs
+    })
+  } catch (error) {
+    res.send({
+      success: 'false',
+      error: error
+    })
+  }
+  res.send('Welcome to BlogSite All Blog Page')
+})
 
 
 
