@@ -4,6 +4,7 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 const writerRoutes = require('./routes/writerRoutes')
 const authRoutes = require("./routes/authRoutes");
+const blogRoutes = require('./routes/blogRoutes')
 const Blog = require('./model/Blog')
 const dotenv = require('dotenv')
 const app = express();
