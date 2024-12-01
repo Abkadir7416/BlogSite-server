@@ -4,7 +4,7 @@ const Users = require("../model/Users.js");
 const auth = require("../middleware/authMiddleware");
 const nodemailer = require("nodemailer");
 const Writer = require("../model/writer.js");
-const Comment = require("../model/comment.js");
+const Comment = require("../model/Comment.js");
 require("dotenv").config();
 const router = express.Router();
 
