@@ -29,7 +29,7 @@ app.get('/home', (req, res)=> {
 })
 
 // Routes
-// app.use("/api/auth", authRoutes);
+app.use("/api/auth", authRoutes);
 // app.use('/api/blogs', blogRoutes);
 app.use('/api/writer', writerRoutes);
 
