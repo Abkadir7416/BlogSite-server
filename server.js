@@ -5,6 +5,9 @@ const bodyParser = require('body-parser');
 const writerRoutes = require('./routes/writerRoutes')
 const authRoutes = require("./routes/authRoutes");
 const blogRoutes = require('./routes/blogRoutes')
+const cartRoutes = require('./routes/shop/cart')
+const bookRoutes = require('./routes/shop/Book')
+const studyToolRoutes = require('./routes/shop/studyTool')
 const Blog = require('./model/Blog')
 const dotenv = require('dotenv')
 const app = express();
@@ -52,6 +55,10 @@ app.get('/blogs', async(req, res)=> {
 app.use("/api/auth", authRoutes);
 app.use('/api/blogs', blogRoutes);
 app.use('/api/writer', writerRoutes);
+app.use('/api/cart', cartRoutes);
+app.use('/api/shop', bookRoutes);
+app.use('/api/shop', studyToolRoutes);
+
 
 
 
