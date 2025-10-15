@@ -2,12 +2,17 @@ const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const bodyParser = require('body-parser');
+
+// routes import 
 const writerRoutes = require('./routes/writerRoutes')
 const authRoutes = require("./routes/authRoutes");
 const blogRoutes = require('./routes/blogRoutes')
 const cartRoutes = require('./routes/shop/cart')
 const bookRoutes = require('./routes/shop/Book')
 const studyToolRoutes = require('./routes/shop/studyTool')
+const paymentRoutes = require('./routes/shop/payment')
+
+// models import 
 const Blog = require('./model/Blog')
 const dotenv = require('dotenv')
 const app = express();
@@ -17,7 +22,6 @@ dotenv.config()
 app.use(cors());
 app.use(bodyParser.json());
 
-console.log('mongo url ', process.env.MONGO_URL);
 // Connect to MongoDB
 mongoose.connect(process.env.MONGO_URL, {
     useNewUrlParser: true,
@@ -58,6 +62,7 @@ app.use('/api/writer', writerRoutes);
 app.use('/api/cart', cartRoutes);
 app.use('/api/shop', bookRoutes);
 app.use('/api/shop', studyToolRoutes);
+app.use('/api/payment', paymentRoutes);
 
 
 
